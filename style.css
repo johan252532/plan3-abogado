@@ -1,0 +1,144 @@
+/* ===================================================
+   1. Variables y Configuración Global
+   =================================================== */
+:root {
+    /* CAMBIAR AQUÍ: Paleta de colores profesional y adaptable */
+    --color-fondo: #101d2e; /* Azul noche profundo */
+    --color-texto-principal: #eef2f5; /* Un blanco suave */
+    --color-texto-secundario: #8d9ab1; /* Azul grisáceo para subtítulos */
+    --color-acento: #ffffff; /* El acento principal será el blanco puro */
+    
+    /* CAMBIAR AQUÍ: Fuentes elegantes y legibles */
+    --fuente-titulos: 'Cormorant Garamond', serif;
+    --fuente-cuerpo: 'Source Sans 3', sans-serif;
+}
+
+/* Animación de entrada para la tarjeta */
+@keyframes fadeInCard {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--color-fondo);
+    /* Fondo con textura sutil para dar un toque de lujo */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color: var(--color-texto-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===================================================
+   2. La Tarjeta Principal
+   =================================================== */
+.card-container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    background-color: rgba(13, 27, 42, 0.6); /* Fondo semi-transparente para ver la textura */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px); /* Efecto cristal esmerilado */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeInCard 0.8s ease-out;
+}
+
+/* ===================================================
+   3. Cabecera del Perfil
+   =================================================== */
+.profile-picture {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-acento);
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-family: var(--fuente-titulos);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-acento);
+}
+
+.profile-title {
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 35px;
+}
+
+/* ===================================================
+   4. Botones y Footer
+   =================================================== */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.link-button {
+    /* Estilo "Ghost Button" por defecto */
+    background-color: transparent;
+    color: var(--color-acento);
+    border: 2px solid var(--color-acento);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.25s ease-in-out;
+}
+
+.link-button .icon {
+    font-size: 1.2rem;
+}
+
+/* --- Interactividad Hover --- */
+@media (hover: hover) {
+    .link-button:hover {
+        background-color: var(--color-acento);
+        color: var(--color-fondo);
+        transform: translateY(-3px) scale(1.03);
+    }
+}
+
+.social-footer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.social-footer a {
+    color: var(--color-texto-secundario);
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.social-footer a:hover {
+    color: var(--color-acento);
+    transform: translateY(-5px);
+}
